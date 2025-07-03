@@ -1,0 +1,19 @@
+<div class="container">
+    <p fs-1 class="fw-bold fs-3">Customer List</p>
+
+    <button class="btn btn-primary" matButton="elevated" color="primary" [routerLink]="'/create'">Create New Customer</button>
+    <div *ngIf="!customerlist.length">Loading...</div>
+    <div *ngFor="let customer of customerlist"
+        class="mat-elevation-z2 p-3 my-2 d-flex justify-content-between align-items-center">
+
+        <div><strong>{{customer.name}}</strong></div>
+        <div>{{customer.email}}</div>
+        <div>{{customer.phone}}</div>
+        <div>
+            <button mat-icon-button [routerLink]="'/edit/'+ customer._id"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button [routerLink]="'/detail/'+ customer._id"><mat-icon>visibility</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="onDelete(customer)"><mat-icon>cancel</mat-icon></button>
+        </div>
+    </div>
+
+</div>

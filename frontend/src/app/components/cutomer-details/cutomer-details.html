@@ -1,0 +1,19 @@
+<div class="container p-2 my-2 bd-highlight">
+ 
+<p fs-1 class="fs-3">Customer Details</p>
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="customerDetails && !isLoading"
+  class="p-3 my-2 mat-elevation-z2 p-3 my-2 justify-content-between align-items-center">
+  <div class="mb-3">
+    <strong>Name:</strong> {{ customerDetails.name }}
+  </div>
+  <div class="mb-3">
+    <strong>Email:</strong> {{ customerDetails.email }}
+  </div>
+  <div class="mb-3">
+    <strong>Phone:</strong> {{ customerDetails.phone }}
+  </div>
+</div>
+ <button matButton="elevated" color="primary" [routerLink]="'/'" class="btn btn-primary">Back to Customer List</button>
+</div>
